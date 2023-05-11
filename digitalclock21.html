@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital clock</title>
+</head>
+<body>
+    
+</body>
+</html>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .main {
+
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            color: rgb(20, 216, 125);
+            background-color: black;
+            font-size: 3.5rem;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            font-weight: lighter;
+            letter-spacing: 1px;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+
+        <div class="time">
+            <span id="hrs"></span>:
+            <span id="mins"></span>:
+            <span id="sec"></span>:
+            <span id="ampm">PM</span>
+        </div>
+
+
+        <div class="Date">
+            <span id="Day">Tue</span>&nbsp;
+            <span id="Date">09</span>-
+            <span id="Month">05</span>-
+            <span id="year">2023</span>
+
+        </div>
+
+        <script>
+            setInterval(() => {
+
+                var days = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"]
+                var month = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT",
+                    "NOV", "DEC",];
+
+                var d = new Date();
+
+                // Time
+                document.getElementById('hrs').innerHTML = d.getHours()
+                document.getElementById('mins').innerHTML = d.getMinutes()
+                document.getElementById('sec').innerHTML = d.getSeconds()
+
+
+
+                // Date
+                document.getElementById('Day').innerHTML = days[d.getdays()];
+                document.getAnimations('Date').innerHTML = d.getdate()
+                document.getElementById('month').innerHTML = month[d.getmonth()];
+                document.getElementById('year').innerHTML = d.getFullYear();
+
+
+
+                if (d.gethoura() >= 12) {
+
+                    document.getElementById()('ampm').innerHTML = "PM"
+                }
+                else {
+
+                    document.getElementById('ampm').innerHTML = "AM"
+                }
+
+            }, 1000)
+
+
+
+            
+
+       
+
+        </script>
+</body>
+
+</html>
